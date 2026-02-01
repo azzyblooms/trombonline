@@ -8,6 +8,7 @@ slide.addEventListener('input', () => {
     console.log(position, Bb.playbackRate);
 })
 addEventListener('keydown', () => {
+    if(event.repeat) return;
     Bb.currentTime = 0;
     if(event.key === 'z') {
             if(position === 1) {
@@ -57,4 +58,10 @@ addEventListener('keydown', () => {
     }
     Bb.play()
     console.log(position, Bb.playbackRate);
+});
+addEventListener('keyup', (event) => {
+    if(event.key == 'z' || event.key == 'x') {
+        Bb.pause();
+        Bb.currentTime = 0;
+    }
 });
