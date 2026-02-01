@@ -1,25 +1,100 @@
 body {
     text-align: center;
     font-family: cursive;
+        margin:0;
+    padding:0;
+    color:white;
+    
 }
 #slide {
     width: 440px;
+    -webkit-user-select: none;
+    user-select: none;
     -webkit-appearance: none;
     appearance:none;
     height: 128px;
     background: url(images/fullbone.png) no-repeat center;
+    transform:scale(1.3);
 }
 #slide::-webkit-slider-thumb {
     -webkit-appearance: none;
-    transform:translateY(25px) translateX(100px);
+    transform:translateY(24px) translateX(100px);
     appearance:none;
     background: url(images/altslide.png) no-repeat center;
     width:300px;
     height:128px;
     border:none;
-    cursor:pointer;
+    cursor:grab;
 }
 #slide::-webkit-slider-runnable-track {
     background:transparent;
     height: 100px;
+}
+#title {
+    font-size:60px;
+    border-bottom:2px solid black;
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    width:100vw;
+    background-color: rgb(179, 148, 72);
+}
+#topdivider {
+    margin-top:40px;
+}
+.interface {
+    font-size: 20px;
+    border: 2px solid black;
+    background-color:rgb(179, 148, 72)
+}
+.titles {
+    font-size:40px;
+    margin:auto;
+}
+#controlbox {
+    width:400px;
+}
+.controls {
+    width:400px;
+    display:flex;
+    margin:auto;
+    justify-content: space-between;
+}
+.lefttext {
+    padding-left:10px;
+}
+.righttext {
+    padding-right:10px;
+}
+.partials {
+    margin-bottom:4px;
+    margin-top:4px;
+}
+.dividers {
+    margin-top:20px;
+    margin-bottom:20px;
+    border:2px dashed black;
+    width:500px;
+}
+.divdivider {
+    margin-top:20px;
+}
+.slide
+{
+    margin-top:4px;
+    margin-bottom:4px;
+}
+.bold {
+    font-weight: bold;
+}
+#tromboneparagraph {
+    width:800px;
+    padding:10px;
+    display:block;
+    margin:auto;
+}
+#tbnpgstarter {
+    width:820px;
+    margin-bottom:10px;
+
 }

@@ -6,12 +6,14 @@ Bb.preservesPitch = false;
 
 function getPlaybackRate(key, position, maxPosition = 7) {
     const baseFactors = {
+        Shift: 0.5,
         z: 1,
         x: 1.498,
         c: 2,
         v: 2.52,
         b: 2.998,
-        n: 3.567
+        n: 3.567,
+        m: 4
     };
     const semitoneLimit = 6;
     const minFactor = Math.pow(2, -semitoneLimit / 12);
@@ -28,7 +30,7 @@ slide.addEventListener('input', () => {
 })
 addEventListener('keydown', () => {
     if(event.repeat) return;
-    if(!['z', 'x', 'c', 'v', 'b', 'n'].includes(event.key)) return;
+    if(!['Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm'].includes(event.key)) return;
     activeKey = event.key;
     Bb.currentTime = 0;
     Bb.playbackRate = getPlaybackRate(activeKey, position);
@@ -55,7 +57,7 @@ addEventListener('keydown', () => {
         Bb.playbackRate = getPlaybackRate(activeKey, position, 7);
     }
     if(event.key == 3) {
-        slide.value = 3;
+        slide.value = 3; 
         position = 3;
         Bb.playbackRate = getPlaybackRate(activeKey, position, 7);
     }
